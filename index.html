@@ -3,22 +3,75 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DocSigna</title>
+<title>DocSigna: Sign PDF Documents</title>
+<meta name="description" content="DocSigna lets you sign any PDF on your phone in under a minute. Capture your signature, place it on the page, and share the signed copy. Your files stay on your device.">
+<link rel="icon" href="assets/icon.png">
 <style>
-  :root { --ink:#101828; --muted:#5B6478; --brand:#2A54BE; --bg:#F6F7FB; }
-  @media (prefers-color-scheme: dark) { :root { --ink:#EEF1F8; --muted:#A5AEC2; --brand:#8FA6E0; --bg:#12151D; } }
+  :root { --ink:#101828; --muted:#5B6478; --brand:#2A54BE; --tint:#EAEFFB; --bg:#F6F7FB; --card:#FFFFFF; --line:#E4E7EE; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#EEF1F8; --muted:#A5AEC2; --brand:#8FA6E0; --tint:#1F2740; --bg:#12151D; --card:#1B1F2A; --line:#2B3140; }
+  }
+  * { box-sizing: border-box; }
   body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 720px; margin: 0 auto; padding: 48px 20px; }
-  h1 { font-size: 32px; margin: 0 0 8px; }
-  p { color: var(--muted); }
-  a { color: var(--brand); font-weight: 600; margin-right: 16px; }
+  a { color: var(--brand); }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  header { display:flex; align-items:center; gap:12px; padding: 24px 0; }
+  header img { width: 44px; height: 44px; border-radius: 12px; }
+  header strong { font-size: 22px; letter-spacing: -0.3px; }
+  header nav { margin-left: auto; display:flex; gap: 20px; }
+  header nav a { font-weight: 600; text-decoration: none; }
+  .hero { padding: 32px 0 24px; max-width: 640px; }
+  h1 { font-size: clamp(34px, 6vw, 52px); line-height: 1.1; letter-spacing: -1.2px; margin: 0 0 16px; text-wrap: balance; }
+  .lead { font-size: 19px; color: var(--muted); margin: 0; }
+  .shots { display:flex; gap: 20px; margin: 40px 0 8px; overflow-x: auto; padding-bottom: 8px; }
+  .shots img { height: 460px; width: auto; border-radius: 20px; border: 1px solid var(--line); flex: none; }
+  h2 { font-size: 26px; letter-spacing: -0.4px; margin: 48px 0 16px; }
+  .features { display:grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 16px; }
+  .feature { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px; }
+  .feature h3 { margin: 0 0 6px; font-size: 17px; }
+  .feature p { margin: 0; color: var(--muted); font-size: 15px; }
+  .privacy { margin-top: 24px; background: var(--tint); border-radius: 18px; padding: 20px; }
+  .privacy p { margin: 0; }
+  footer { margin-top: 56px; padding: 24px 0 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; display:flex; flex-wrap:wrap; gap: 8px 24px; }
 </style>
 </head>
 <body>
-<main>
-  <h1>DocSigna</h1>
-  <p>Sign any PDF on your phone in under a minute.</p>
-  <p><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a></p>
-</main>
+<div class="wrap">
+  <header>
+    <img src="assets/icon.png" alt="DocSigna app icon">
+    <strong>DocSigna</strong>
+    <nav><a href="support.html">Support</a><a href="privacy.html">Privacy</a></nav>
+  </header>
+
+  <section class="hero">
+    <h1>Sign any PDF in under a minute</h1>
+    <p class="lead">Add your handwritten signature to a document, place it exactly where it belongs, and share the signed copy. No printing, no scanning, no account.</p>
+  </section>
+
+  <div class="shots">
+    <img src="assets/shot-home.png" alt="DocSigna home screen with an Open PDF button, saved signatures and recent documents">
+    <img src="assets/shot-sign.png" alt="Placing and resizing a signature on a PDF page">
+    <img src="assets/shot-signatures.png" alt="The My signatures screen with saved signatures">
+  </div>
+
+  <h2>What you can do</h2>
+  <div class="features">
+    <div class="feature"><h3>Capture your signature</h3><p>Sign on white paper, take a photo, and DocSigna removes the background so only your ink remains.</p></div>
+    <div class="feature"><h3>Place it anywhere</h3><p>Drag, pinch and twist your signature into position on any page of the document.</p></div>
+    <div class="feature"><h3>Share the signed PDF</h3><p>Save the signed copy and send it by email, chat or cloud storage.</p></div>
+    <div class="feature"><h3>Keep several signatures</h3><p>Save a full signature, initials or variations, and rename them to find the right one fast.</p></div>
+  </div>
+
+  <div class="privacy">
+    <p><strong>Private by design.</strong> Your documents and signatures stay on your device. Read the <a href="privacy.html">Privacy Policy</a>.</p>
+  </div>
+
+  <footer>
+    <span>© DocSigna</span>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <span>docsigna.app@gmail.com</span>
+  </footer>
+</div>
 </body>
 </html>
